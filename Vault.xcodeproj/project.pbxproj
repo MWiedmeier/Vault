@@ -14,6 +14,11 @@
 		C20BCCE71D2AC38E008B6258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20BCCE51D2AC38E008B6258 /* LaunchScreen.storyboard */; };
 		C20BCCF21D2AC38E008B6258 /* VaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCCF11D2AC38E008B6258 /* VaultTests.swift */; };
 		C20BCCFD1D2AC38E008B6258 /* VaultUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCCFC1D2AC38E008B6258 /* VaultUITests.swift */; };
+		C20BCD111D2ADF5D008B6258 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD101D2ADF5D008B6258 /* SWRevealViewController.m */; };
+		C20BCD131D2AE14A008B6258 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD121D2AE14A008B6258 /* MenuController.swift */; };
+		C20BCD151D2AE591008B6258 /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD141D2AE591008B6258 /* ExitViewController.swift */; };
+		C20BCD171D2AE9DC008B6258 /* VaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD161D2AE9DC008B6258 /* VaultViewController.swift */; };
+		C20BCD191D2AEAF4008B6258 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD181D2AEAF4008B6258 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,13 @@
 		C20BCCF81D2AC38E008B6258 /* VaultUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaultUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20BCCFC1D2AC38E008B6258 /* VaultUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultUITests.swift; sourceTree = "<group>"; };
 		C20BCCFE1D2AC38E008B6258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C20BCD0E1D2ADF5D008B6258 /* Vault-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vault-Bridging-Header.h"; sourceTree = "<group>"; };
+		C20BCD0F1D2ADF5D008B6258 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C20BCD101D2ADF5D008B6258 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C20BCD121D2AE14A008B6258 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		C20BCD141D2AE591008B6258 /* ExitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
+		C20BCD161D2AE9DC008B6258 /* VaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaultViewController.swift; sourceTree = "<group>"; };
+		C20BCD181D2AEAF4008B6258 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,19 @@
 		C20BCCDB1D2AC38E008B6258 /* Vault */ = {
 			isa = PBXGroup;
 			children = (
+				C20BCD0F1D2ADF5D008B6258 /* SWRevealViewController.h */,
+				C20BCD101D2ADF5D008B6258 /* SWRevealViewController.m */,
 				C20BCCDC1D2AC38E008B6258 /* AppDelegate.swift */,
 				C20BCCDE1D2AC38E008B6258 /* ViewController.swift */,
 				C20BCCE01D2AC38E008B6258 /* Main.storyboard */,
+				C20BCD181D2AEAF4008B6258 /* SettingsViewController.swift */,
+				C20BCD161D2AE9DC008B6258 /* VaultViewController.swift */,
+				C20BCD141D2AE591008B6258 /* ExitViewController.swift */,
+				C20BCD121D2AE14A008B6258 /* MenuController.swift */,
 				C20BCCE31D2AC38E008B6258 /* Assets.xcassets */,
 				C20BCCE51D2AC38E008B6258 /* LaunchScreen.storyboard */,
 				C20BCCE81D2AC38E008B6258 /* Info.plist */,
+				C20BCD0E1D2ADF5D008B6258 /* Vault-Bridging-Header.h */,
 			);
 			path = Vault;
 			sourceTree = "<group>";
@@ -193,6 +212,7 @@
 				TargetAttributes = {
 					C20BCCD81D2AC38E008B6258 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2S932EH6NK;
 					};
 					C20BCCEC1D2AC38E008B6258 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -256,8 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20BCD131D2AE14A008B6258 /* MenuController.swift in Sources */,
+				C20BCD151D2AE591008B6258 /* ExitViewController.swift in Sources */,
+				C20BCD191D2AEAF4008B6258 /* SettingsViewController.swift in Sources */,
 				C20BCCDF1D2AC38E008B6258 /* ViewController.swift in Sources */,
+				C20BCD171D2AE9DC008B6258 /* VaultViewController.swift in Sources */,
 				C20BCCDD1D2AC38E008B6258 /* AppDelegate.swift in Sources */,
+				C20BCD111D2ADF5D008B6258 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +426,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Vault/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiedmeier.wiedtech.Vault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vault/Vault-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -412,10 +443,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Vault/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiedmeier.wiedtech.Vault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Vault/Vault-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -484,6 +520,7 @@
 				C20BCD031D2AC38E008B6258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C20BCD041D2AC38E008B6258 /* Build configuration list for PBXNativeTarget "VaultTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +529,7 @@
 				C20BCD061D2AC38E008B6258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C20BCD071D2AC38E008B6258 /* Build configuration list for PBXNativeTarget "VaultUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +538,7 @@
 				C20BCD091D2AC38E008B6258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
