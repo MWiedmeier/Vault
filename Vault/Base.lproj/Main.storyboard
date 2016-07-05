@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -63,8 +64,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-kg-Qk5">
-                                                    <rect key="frame" x="32" y="11" width="97" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Vault" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-kg-Qk5">
+                                                    <rect key="frame" x="32" y="11" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -140,7 +141,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4x-kX-fkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="1186"/>
+            <point key="canvasLocation" x="1878" y="1187"/>
         </scene>
         <!--Exit-->
         <scene sceneID="uIb-v2-rYS">
@@ -164,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rap-fm-KDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2612" y="1186"/>
+            <point key="canvasLocation" x="2617" y="1187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qwc-T9-NIM">
@@ -209,12 +210,60 @@
                     <view key="view" contentMode="scaleToFill" id="y9j-UN-ZTi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k6r-NB-9XE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.63266282579999999" green="0.82322157949999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ASw-MP-BRF">
+                                    <size key="itemSize" width="53" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ghB-cQ-9bO" customClass="ThumbnailViewController" customModule="Vault" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="53" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n89-kJ-14c">
+                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6r-NB-9XE" secondAttribute="trailing" constant="-20" id="0cc-QT-Wvv"/>
+                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" constant="100" id="57G-wr-eKQ"/>
+                            <constraint firstItem="k6r-NB-9XE" firstAttribute="top" secondItem="rlP-tg-4jM" secondAttribute="bottom" id="6yP-Oq-Byj"/>
+                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" constant="123" id="8HO-Yh-iDU"/>
+                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" id="bZr-4c-RBU"/>
+                            <constraint firstItem="k6r-NB-9XE" firstAttribute="leading" secondItem="y9j-UN-ZTi" secondAttribute="leadingMargin" constant="-20" id="hso-gp-DNm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="57G-wr-eKQ"/>
+                                <exclude reference="8HO-Yh-iDU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Vault" id="jsD-Tw-ZzN">
                         <barButtonItem key="leftBarButtonItem" title="Open" id="JLB-yY-Noa"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="vct-uI-4GL">
+                            <connections>
+                                <action selector="openLibrary:" destination="HN4-56-7TS" id="eKM-CE-Rfe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="vct-uI-4GL" id="HyM-6c-Zy0"/>
                         <outlet property="menuButton" destination="JLB-yY-Noa" id="NBj-zQ-qZv"/>
                     </connections>
                 </viewController>

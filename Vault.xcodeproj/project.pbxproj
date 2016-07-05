@@ -19,6 +19,7 @@
 		C20BCD151D2AE591008B6258 /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD141D2AE591008B6258 /* ExitViewController.swift */; };
 		C20BCD171D2AE9DC008B6258 /* VaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD161D2AE9DC008B6258 /* VaultViewController.swift */; };
 		C20BCD191D2AEAF4008B6258 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD181D2AEAF4008B6258 /* SettingsViewController.swift */; };
+		C20BCD1B1D2B4594008B6258 /* ThumbnailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BCD1A1D2B4594008B6258 /* ThumbnailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C20BCD141D2AE591008B6258 /* ExitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
 		C20BCD161D2AE9DC008B6258 /* VaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaultViewController.swift; sourceTree = "<group>"; };
 		C20BCD181D2AEAF4008B6258 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C20BCD1A1D2B4594008B6258 /* ThumbnailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				C20BCCE51D2AC38E008B6258 /* LaunchScreen.storyboard */,
 				C20BCCE81D2AC38E008B6258 /* Info.plist */,
 				C20BCD0E1D2ADF5D008B6258 /* Vault-Bridging-Header.h */,
+				C20BCD1A1D2B4594008B6258 /* ThumbnailViewController.swift */,
 			);
 			path = Vault;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				C20BCD131D2AE14A008B6258 /* MenuController.swift in Sources */,
 				C20BCD151D2AE591008B6258 /* ExitViewController.swift in Sources */,
 				C20BCD191D2AEAF4008B6258 /* SettingsViewController.swift in Sources */,
+				C20BCD1B1D2B4594008B6258 /* ThumbnailViewController.swift in Sources */,
 				C20BCCDF1D2AC38E008B6258 /* ViewController.swift in Sources */,
 				C20BCD171D2AE9DC008B6258 /* VaultViewController.swift in Sources */,
 				C20BCCDD1D2AC38E008B6258 /* AppDelegate.swift in Sources */,
