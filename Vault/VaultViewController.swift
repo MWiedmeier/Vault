@@ -8,10 +8,14 @@
 
 import UIKit
 
-class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let reuseIdentifier = "cell"
+    var thumbnails: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +39,6 @@ class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UI
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-            //imagePicker.allowsEditing = true
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
@@ -43,18 +46,44 @@ class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UI
     // MARK: - UIImagePickerControllerDelegate Methods
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil {
-//            imageView.contentMode = .ScaleAspectFit
-//            imageView.image = pickedImage
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            thumbnails.append(pickedImage)
+            NSOperationQueue.mainQueue().addOperationWithBlock(collectionView.reloadData)
+
+            
         }
-        print("hello")
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        print("nah")
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - UICollectionViewDataSource protocol
+    
+    // tell the collection view how many cells to make
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(self.thumbnails.count)
+        return self.thumbnails.count
+    }
+    
+    // make a cell for each cell index path
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        // get a reference to our storyboard cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ThumbnailViewController
+        
+        cell.imageThumbnail.image = self.thumbnails[indexPath.item]
+        
+        return cell
+    }
+
+
+    // MARK: - UICollectionViewDelegate protocol
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+    }
 }
 

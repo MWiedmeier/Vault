@@ -11,5 +11,6 @@ import UIKit
 class ThumbnailViewController: UICollectionViewCell {
 
     
+    @IBOutlet weak var imageThumbnail: UIImageView!
     
 }
