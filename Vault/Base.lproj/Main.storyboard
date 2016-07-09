@@ -212,28 +212,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k6r-NB-9XE">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.63266282579999999" green="0.82322157949999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ASw-MP-BRF">
-                                    <size key="itemSize" width="109" height="98"/>
+                                    <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ghB-cQ-9bO" customClass="ThumbnailViewController" customModule="Vault" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="109" height="98"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MediaCell" id="ghB-cQ-9bO" customClass="ThumbnailViewController" customModule="Vault" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="109" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n89-kJ-14c">
-                                                    <rect key="frame" x="0.0" y="0.0" width="109" height="98"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n89-kJ-14c">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="n89-kJ-14c" secondAttribute="trailing" constant="8" id="5g1-7W-Xy1"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="n89-kJ-14c" secondAttribute="bottom" constant="20" id="84W-9b-YFz"/>
+                                            <constraint firstItem="n89-kJ-14c" firstAttribute="top" secondItem="ghB-cQ-9bO" secondAttribute="topMargin" constant="-8" id="Zuf-wK-VeI"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="n89-kJ-14c" secondAttribute="trailing" constant="-8" id="fCV-nq-n9E"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="n89-kJ-14c" secondAttribute="trailing" constant="-8" id="ikA-tp-TtB"/>
+                                            <constraint firstItem="n89-kJ-14c" firstAttribute="leading" secondItem="ghB-cQ-9bO" secondAttribute="leadingMargin" constant="-8" id="oRA-0v-XU7"/>
+                                            <constraint firstItem="n89-kJ-14c" firstAttribute="leading" secondItem="ghB-cQ-9bO" secondAttribute="leadingMargin" constant="9" id="tzB-Ut-JVV"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="n89-kJ-14c" secondAttribute="bottom" constant="-8" id="uKY-tC-N8A"/>
+                                            <constraint firstItem="n89-kJ-14c" firstAttribute="top" secondItem="ghB-cQ-9bO" secondAttribute="topMargin" constant="-8" id="uoG-7h-Tlm"/>
+                                            <constraint firstItem="n89-kJ-14c" firstAttribute="leading" secondItem="ghB-cQ-9bO" secondAttribute="leadingMargin" constant="-8" id="xDG-F6-B0B"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5g1-7W-Xy1"/>
+                                                <exclude reference="84W-9b-YFz"/>
+                                                <exclude reference="tzB-Ut-JVV"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="imageThumbnail" destination="n89-kJ-14c" id="0Nh-SG-SwB"/>
                                         </connections>
@@ -247,19 +266,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="k6r-NB-9XE" secondAttribute="trailing" constant="-20" id="0cc-QT-Wvv"/>
-                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" constant="100" id="57G-wr-eKQ"/>
-                            <constraint firstItem="k6r-NB-9XE" firstAttribute="top" secondItem="rlP-tg-4jM" secondAttribute="bottom" id="6yP-Oq-Byj"/>
-                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" constant="123" id="8HO-Yh-iDU"/>
-                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" id="bZr-4c-RBU"/>
-                            <constraint firstItem="k6r-NB-9XE" firstAttribute="leading" secondItem="y9j-UN-ZTi" secondAttribute="leadingMargin" constant="-20" id="hso-gp-DNm"/>
+                            <constraint firstItem="k6r-NB-9XE" firstAttribute="leading" secondItem="y9j-UN-ZTi" secondAttribute="leadingMargin" constant="-20" id="BJG-hA-n4Q"/>
+                            <constraint firstItem="k6r-NB-9XE" firstAttribute="top" secondItem="y9j-UN-ZTi" secondAttribute="topMargin" id="i0L-DH-IcR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6r-NB-9XE" secondAttribute="trailing" constant="-20" id="pFT-s2-DCB"/>
+                            <constraint firstItem="cl4-ye-4lf" firstAttribute="top" secondItem="k6r-NB-9XE" secondAttribute="bottom" id="vzV-gM-T6y"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="57G-wr-eKQ"/>
-                                <exclude reference="8HO-Yh-iDU"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Vault" id="jsD-Tw-ZzN">
                         <barButtonItem key="leftBarButtonItem" title="Open" id="JLB-yY-Noa"/>
