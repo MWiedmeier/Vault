@@ -60,6 +60,33 @@ class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
+    func getCurrentTime() -> NSString{
+        
+        return String(Int64(NSDate().timeIntervalSince1970 * 1000))
+        
+    }
+    
+    func clearFilesFromDocuments(){
+        
+        do{
+            
+            let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let documentsPath = paths[0]
+            
+            let manager = NSFileManager.defaultManager()
+            let files = try manager.contentsOfDirectoryAtPath(documentsPath)
+        
+            for file in files {
+            
+                let fullPath = documentsPath.stringByAppendingString("/" + file)
+                try manager.removeItemAtPath(fullPath)
+
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+
+    }
     
     // MARK: - UIImagePickerControllerDelegate Methods
     
@@ -72,8 +99,27 @@ class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
             thumbnails.append(pickedImage)
             NSOperationQueue.mainQueue().addOperationWithBlock(collectionView.reloadData)
-
             
+            // Save Image
+            do {
+                
+                clearFilesFromDocuments()
+                let fileName = (getCurrentTime() as String) + ".png"
+                let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                let documentsPath = paths[0]
+                let filePath = documentsPath.stringByAppendingString("/" + fileName)
+                
+                if let data = UIImagePNGRepresentation(pickedImage){
+                    data.writeToFile(filePath, atomically:true)
+                }
+                
+                let manager = NSFileManager.defaultManager()
+                let allItems = try manager.contentsOfDirectoryAtPath(documentsPath)
+                print(allItems)
+                
+            }catch let error as NSError {
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -125,29 +171,6 @@ class VaultViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 1;
     }
-//        
-//    func collectionView(collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                               insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        
-//        return sectionInsets
-//    }
-//    
-//    func scaleToFitSize(image:UIImage, size:CGSize) -> UIImage{
-//        
-//        let scale = min(size.width/image.size.width, size.height/image.size.height)
-//        let width = image.size.width * scale
-//        let height = image.size.height * scale
-//        
-//        let imageRect = CGRectMake((size.width-width)/2.0,
-//                                   (size.height-height)/2.0,
-//                                   width,
-//                                   height)
-//        
-//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-//        image.drawInRect(imageRect)
-//        return UIGraphicsGetImageFromCurrentImageContext()
-//    }
     
 }
 
